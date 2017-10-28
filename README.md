@@ -1,7 +1,7 @@
 # MultiColorBlock
 
 
-MultiColorBlock framework for iOS written in Swift, it is use for to set priority of any task via different colors.
+MultiColorBlock library is used to recognize the priority of daily task with simple color code.
 
 ## Features
 
@@ -14,7 +14,7 @@ MultiColorBlock framework for iOS written in Swift, it is use for to set priorit
 
 ## Installation
 
-**FolioReaderKit** is available through [CocoaPods](http://cocoapods.org)
+**MultiColorBlock** is available through [CocoaPods](http://cocoapods.org)
 
 ### Cocoapods
 
@@ -24,7 +24,7 @@ MultiColorBlock framework for iOS written in Swift, it is use for to set priorit
 $ gem install cocoapods
 ```
 
-To integrate FolioReaderKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate MultiColorBlock into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -61,24 +61,24 @@ To get started, this is a simple usage sample of using the integrated view contr
 import MultiColorBlock
 
 @IBAction func colorBtnTapped(_ sender: UIButton) {
-//Display color block view on tap button
-let blockView = self.view.showColorBlockView(onTap: sender, with: 100)
-blockView.delegate = self
-//To set custom color
-blockView.setCustomColor(to: .down, color: .green)
-blockView.setCustomColor(to: .right, color: .blue)
-blockView.setCustomColor(to: .up, color: .yellow)
-blockView.setCustomColor(to: .left, color: .red)
+    //Display color block view on tap button
+    let blockView = self.view.showColorBlockView(onTap: sender, with: 100)
+    blockView.delegate = self
+    //To set custom color
+    blockView.setCustomColor(to: .down, color: .green)
+    blockView.setCustomColor(to: .right, color: .blue)
+    blockView.setCustomColor(to: .up, color: .yellow)
+    blockView.setCustomColor(to: .left, color: .red)
 }
 ```
-Delegate methods:
+Protocol Delegate methods:
 ```
 func colorBlockDidSelect(color: UIColor) {
-print("color: \(color)")
+    print("color: \(color)")
 }
 
 func colorBlockDidClose() {
-print("close")
+    print("close")
 }
 ```
 For more usage examples check the [Example](/Example) folder.

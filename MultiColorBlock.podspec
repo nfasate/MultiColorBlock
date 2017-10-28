@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MultiColorBlock'
   s.version          = '0.1.0'
-  s.summary          = 'MultiColorBlock.'
+  s.summary          = 'MultiColorBlock library is used to recognize the priority of daily task with simple color code.'
   #s.description      = <<-DESC
   s.homepage         = 'https://github.com/nfasate/MultiColorBlock'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
