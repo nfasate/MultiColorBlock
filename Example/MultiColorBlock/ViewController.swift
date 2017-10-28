@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MultiColorBlock
 
 class ViewController: UIViewController {
 

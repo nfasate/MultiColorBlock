@@ -1,0 +1,6 @@
+framework module MultiColorBlock {
+  umbrella header "MultiColorBlock-umbrella.h"
+
+  export *
+  module * { export * }
+}
