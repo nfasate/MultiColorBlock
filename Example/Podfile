@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MultiColorBlock_Example' do
+  pod 'MultiColorBlock', :path => '../'
+
+  target 'MultiColorBlock_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
