@@ -358,7 +358,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1842A1045779A2F58B83D380B16D87CA /* Debug */ = {
+		27A0E2AE9F7BFBF795B503E97ED506D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DE0016396BCD61852F990BC4BCCC7BA /* MultiColorBlock.xcconfig */;
 			buildSettings = {
@@ -374,38 +374,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MultiColorBlock/MultiColorBlock-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MultiColorBlock/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MultiColorBlock/MultiColorBlock.modulemap";
-				PRODUCT_NAME = MultiColorBlock;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		22A35C57C3BD0C50A2335BDC73F71EDE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DE0016396BCD61852F990BC4BCCC7BA /* MultiColorBlock.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MultiColorBlock/MultiColorBlock-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MultiColorBlock/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MultiColorBlock/MultiColorBlock.modulemap";
 				PRODUCT_NAME = MultiColorBlock;
@@ -568,6 +537,37 @@
 			};
 			name = Release;
 		};
+		89A25500EB4533062DFDE43C8EAC8E2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE0016396BCD61852F990BC4BCCC7BA /* MultiColorBlock.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MultiColorBlock/MultiColorBlock-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MultiColorBlock/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MultiColorBlock/MultiColorBlock.modulemap";
+				PRODUCT_NAME = MultiColorBlock;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		AB8475AE97CA82C75D5F54CBBCD66922 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2A2B0CD23A0488A8790513FD827FA23B /* Pods-MultiColorBlock_Example.debug.xcconfig */;
@@ -702,8 +702,8 @@
 		B85DD22A52456AE2DF90E3C6A94EA228 /* Build configuration list for PBXNativeTarget "MultiColorBlock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1842A1045779A2F58B83D380B16D87CA /* Debug */,
-				22A35C57C3BD0C50A2335BDC73F71EDE /* Release */,
+				89A25500EB4533062DFDE43C8EAC8E2F /* Debug */,
+				27A0E2AE9F7BFBF795B503E97ED506D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

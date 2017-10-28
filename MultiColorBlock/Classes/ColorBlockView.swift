@@ -11,13 +11,13 @@ import UIKit
 /**
  Delegate protocol for performing action
  */
-@objc public protocol ColorBlockViewDelegate
+public protocol ColorBlockViewDelegate
 {
     /**
      
      */
     func colorBlockDidSelect(color: UIColor)
-    @objc optional func colorBlockDidClose()
+    func colorBlockDidClose()
 }
 
 public class ColorBlockView: UIView {
@@ -45,7 +45,7 @@ public class ColorBlockView: UIView {
     /**
      Delegate object of color block.
      */
-    var delegate: ColorBlockViewDelegate?
+    public var delegate: ColorBlockViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,7 +65,10 @@ public class ColorBlockView: UIView {
      */
     private func loadNib()
     {
-        Bundle.main.loadNibNamed("ColorBlockView", owner: self, options: nil)
+        //Bundle.main.loadNibNamed("ColorBlockView", owner: self, options: nil)
+        let bundle = Bundle(for: self.classForCoder)
+        let nib = UINib(nibName: "ColorBlockView", bundle: bundle)
+        nib.instantiate(withOwner: self, options: nil)
         contentView.frame = self.bounds
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = self.bounds.width / 2
@@ -102,7 +105,7 @@ public class ColorBlockView: UIView {
             self.removeFromSuperview()
         }
         if sender == nil {
-            delegate?.colorBlockDidClose!()
+            delegate?.colorBlockDidClose()
         }else {
             delegate?.colorBlockDidSelect(color: sender.backgroundColor!)
         }
@@ -157,7 +160,7 @@ public class ColorBlockView: UIView {
 }
 
 extension UIView {
-    func showColorBlockView(onTap sender: UIButton, with size:CGFloat = 100) -> ColorBlockView
+    public func showColorBlockView(onTap sender: UIButton, with size:CGFloat = 100) -> ColorBlockView
     {
         let xPoint = sender.frame.origin.x + (sender.frame.width/2)
         let yPoint = sender.frame.origin.y + (sender.frame.height/2)

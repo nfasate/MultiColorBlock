@@ -1,24 +1,88 @@
 # MultiColorBlock
 
-[![CI Status](http://img.shields.io/travis/nfasate/MultiColorBlock.svg?style=flat)](https://travis-ci.org/nfasate/MultiColorBlock)
-[![Version](https://img.shields.io/cocoapods/v/MultiColorBlock.svg?style=flat)](http://cocoapods.org/pods/MultiColorBlock)
-[![License](https://img.shields.io/cocoapods/l/MultiColorBlock.svg?style=flat)](http://cocoapods.org/pods/MultiColorBlock)
-[![Platform](https://img.shields.io/cocoapods/p/MultiColorBlock.svg?style=flat)](http://cocoapods.org/pods/MultiColorBlock)
 
-## Example
+MultiColorBlock framework for iOS written in Swift, it is use for to set priority of any task via different colors.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Features
 
-## Requirements
+- [x] Custom colors
+- [x] Custom view size
+- [x] Protocol Delegate support
+
+## Demo
+
 
 ## Installation
 
-MultiColorBlock is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+**FolioReaderKit** is available through [CocoaPods](http://cocoapods.org)
+
+### Cocoapods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate FolioReaderKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target '<Your Target Name>' do
 pod 'MultiColorBlock'
+end
 ```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+Alternatively to give it a test run, run the command:
+
+```bash
+$ pod try MultiColorBlock
+```
+
+## Requirements
+
+- iOS 9.0+
+- Xcode 9.0.0 +
+
+## Basic Usage
+
+To get started, this is a simple usage sample of using the integrated view controller.
+
+```swift
+import MultiColorBlock
+
+@IBAction func colorBtnTapped(_ sender: UIButton) {
+//Display color block view on tap button
+let blockView = self.view.showColorBlockView(onTap: sender, with: 100)
+blockView.delegate = self
+//To set custom color
+blockView.setCustomColor(to: .down, color: .green)
+blockView.setCustomColor(to: .right, color: .blue)
+blockView.setCustomColor(to: .up, color: .yellow)
+blockView.setCustomColor(to: .left, color: .red)
+}
+```
+Delegate methods:
+```
+func colorBlockDidSelect(color: UIColor) {
+print("color: \(color)")
+}
+
+func colorBlockDidClose() {
+print("close")
+}
+```
+For more usage examples check the [Example](/Example) folder.
+
 
 ## Author
 
