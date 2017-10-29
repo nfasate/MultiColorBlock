@@ -10,7 +10,9 @@ MultiColorBlock library is used to recognize the priority of daily task with sim
 - [x] Protocol Delegate support
 
 ## Demo
+Here's what it looks like:
 
+![Output sample](https://www.dropbox.com/home/Saves?preview=App_Preview.gif)
 
 ## Installation
 

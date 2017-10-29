@@ -1,10 +1,27 @@
 //
 //  ColorBlockView.swift
-//  DemoExample
+//  MultiColorBlock
 //
 //  Created by Nilesh's MAC on 10/28/17.
-//  Copyright © 2017 Nilesh's MAC. All rights reserved.
+//  Copyright (c) 2017 nfasate <nfasate@github.com>
+
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
 //
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
@@ -14,9 +31,12 @@ import UIKit
 public protocol ColorBlockViewDelegate
 {
     /**
-     
+     Called when user selct any color of the Blocks.
      */
     func colorBlockDidSelect(color: UIColor)
+    /**
+     Called when user close the multi color block.
+     */
     func colorBlockDidClose()
 }
 
@@ -32,6 +52,7 @@ public class ColorBlockView: UIView {
         case left
     }
     
+    //MARK:- IBOutlets variables
     /**
      XIB content view
      */
@@ -47,6 +68,7 @@ public class ColorBlockView: UIView {
      */
     public var delegate: ColorBlockViewDelegate?
     
+    //MARK:- Default Functions
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -57,15 +79,15 @@ public class ColorBlockView: UIView {
         commonInit()
     }
     
+    //MARK:- Custom Functions
     private func commonInit() {
         loadNib()
     }
     /**
-     Load nib on init method
+     Load the nib on init method.
      */
     private func loadNib()
     {
-        //Bundle.main.loadNibNamed("ColorBlockView", owner: self, options: nil)
         let bundle = Bundle(for: self.classForCoder)
         let nib = UINib(nibName: "ColorBlockView", bundle: bundle)
         nib.instantiate(withOwner: self, options: nil)
@@ -98,12 +120,13 @@ public class ColorBlockView: UIView {
         
         UIView.animate(withDuration: 0.4, animations: {
             if let color = sender?.backgroundColor {
-                self.setSelectedColor(color)
+            self.setSelectedColor(color)
             }
             self.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        }) { (sucess) in
+            }) { (sucess) in
             self.removeFromSuperview()
         }
+        
         if sender == nil {
             delegate?.colorBlockDidClose()
         }else {
@@ -138,6 +161,7 @@ public class ColorBlockView: UIView {
         }
     }
     
+    //MARK:- IBAction Methods
     @IBAction private func centerCloseBtnTapped(_ sender: UIButton) {
         closeView(nil)
     }
@@ -159,13 +183,49 @@ public class ColorBlockView: UIView {
     }
 }
 
+//MARK:- UIView Extension
 extension UIView {
+    
+    static var xTemp: CGFloat!
+    static var yTemp: CGFloat!
+    
+    /**
+     To Display the multi color block view with animation on tap object.
+     */
     public func showColorBlockView(onTap sender: UIButton, with size:CGFloat = 100) -> ColorBlockView
     {
-        let xPoint = sender.frame.origin.x + (sender.frame.width/2)
-        let yPoint = sender.frame.origin.y + (sender.frame.height/2)
+        let viewWidth = self.frame.width
+        let viewHeight = self.frame.height
         
-        let circularView = ColorBlockView.init(frame: CGRect(x: xPoint-(size/2), y: yPoint-(size/2), width: size, height: size))
+        var xPoint = (sender.frame.origin.x + (sender.frame.width/2)) - (size/2)
+        var yPoint = (sender.frame.origin.y + (sender.frame.height/2)) - (size/2)
+        
+        UIView.xTemp = xPoint
+        UIView.yTemp = yPoint
+        
+        let xTempSize = xPoint + size + 10
+        let yTempSize = yPoint + size + 10
+        
+        if xTempSize >= viewWidth
+        {
+            let diff = xTempSize - viewWidth
+            xPoint = xPoint - diff
+        }else if (xPoint - 10) <= 0
+        {
+            xPoint = 10
+        }
+        
+        
+        if yTempSize >= viewHeight
+        {
+            let diff = yTempSize - viewHeight
+            yPoint = yPoint - diff
+        }else if (yPoint - 10) <= 0
+        {
+            yPoint = 10
+        }
+        
+        let circularView = ColorBlockView.init(frame: CGRect(x: xPoint, y: yPoint, width: size, height: size))
         
         circularView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         
@@ -179,11 +239,15 @@ extension UIView {
         self.addSubview(circularView)
         let degree:CGFloat = .pi + .pi/4
         
-        UIView.animate(withDuration: 0.4, animations: {
-            circularView.transform = CGAffineTransform(rotationAngle: degree)
-        }) { (sucess) in
-            
+        let when = DispatchTime.now() + 0.005
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            UIView.animate(withDuration: 0.4, animations: {
+                circularView.transform = CGAffineTransform(rotationAngle: degree)
+            }) { (sucess) in
+                
+            }
         }
+        
         return circularView
     }
 }
