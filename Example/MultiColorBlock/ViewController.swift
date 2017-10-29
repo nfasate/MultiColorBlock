@@ -28,13 +28,48 @@ class ViewController: UIViewController, ColorBlockViewDelegate {
     @IBAction func colorBtnTapped(_ sender: UIButton) {
         let view = self.view.showColorBlockView(onTap: sender, with: 100)
         view.delegate = self
-        view.setCustomColor(to: .down, color: .red)
+        //view.setCustomColor(to: .down, color: .red)
         
+    }
+    
+    @IBAction func colorBtnTapped1(_ sender: UIButton) {
+        let view = self.view.showColorBlockView(onTap: sender, with: 100)
+        view.delegate = self
+        //view.setCustomColor(to: .down, color: .red)
+    }
+    
+    @IBAction func colorBtnTapped2(_ sender: UIButton) {
+        let view = self.view.showColorBlockView(onTap: sender, with: 100)
+        view.delegate = self
+        //view.setCustomColor(to: .down, color: .red)
+    }
+    
+    @IBAction func colorBtnTapped3(_ sender: UIButton) {
+        let view = self.view.showColorBlockView(onTap: sender, with: 100)
+        view.delegate = self
+        //view.setCustomColor(to: .down, color: .red)
+    }
+    
+    @IBAction func colorBtnTapped4(_ sender: UIButton) {
+        let view = self.view.showColorBlockView(onTap: sender, with: 100)
+        view.delegate = self
+        //view.setCustomColor(to: .down, color: .red)
+    }
+    
+    @IBAction func colorBtnTapped5(_ sender: UIButton) {
+        let view = self.view.showColorBlockView(onTap: sender, with: 100)
+        view.delegate = self
+        //view.setCustomColor(to: .down, color: .red)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func colorBtnTapped6(_ sender: UIButton) {
+        let view = self.view.showColorBlockView(onTap: sender, with: 100)
+        view.delegate = self
+        //view.setCustomColor(to: .down, color: .red)
+    }
 }
 
