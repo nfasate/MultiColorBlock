@@ -1401,3 +1401,21 @@ extension UIColor
     }
 }
 
+//Initialise google map
+//func addMapToView()
+//{
+//    if objGMVC == nil
+//    {
+//        objGMVC = GoogleMapViewController()
+//        objGMVC.showCurrentLoc = true
+//        objGMVC.mapType = .currentLoc
+//        objGMVC.currentLoc = CLLocationCoordinate2DMake(Macros.Constants.userCurrentLat, Macros.Constants.userCurrentLong)
+//        objGMVC.view.frame = mapBaseTracking.bounds
+//        objGMVC.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        objGMVC.customMapView.padding = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+//        self.addChildViewController(objGMVC)
+//        self.mapBaseTracking.addSubview(self.objGMVC.view)
+//        objGMVC.delegate = self
+//    }
+//}
+
