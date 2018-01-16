@@ -1419,3 +1419,37 @@ extension UIColor
 //    }
 //}
 
+//Add Marker
+//func createMarkerAtLoc(_ loc : CLLocationCoordinate2D, model : FamilyListModel)
+//{
+//    checkAndDeleteExistingMarkerForModel(model: model)
+//    // Annotation Placer
+//    let marker = CustomMarker()
+//
+//    let embeddedView = MarkerTracker(frame: CGRect(x: 0, y: 0, width: 55, height: 65))
+//    embeddedView.downArrowBaseImgView.image = embeddedView.downArrowBaseImgView.image!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+//    embeddedView.userImage.imageFromUrl(model.imgURL, placeHolderImage: UIImage(named: "defaultUser"), shouldResize: true, showActivity: true)
+//    embeddedView.downArrowBaseImgView.tintColor = Macros.Colors.yellowColor
+//    embeddedView.userImage.layer.cornerRadius = CGFloat((65 * 0.62) / 2.0)
+//    embeddedView.userImage.layer.masksToBounds = true
+//    embeddedView.userImage.layer.borderColor = Macros.Colors.yellowColor.cgColor
+//    embeddedView.userImage.layer.borderWidth = 1.0
+//
+//    if model.isPeerTrackable == false
+//    {
+//        let locCord =  CLLocationCoordinate2DMake(Double(model.lastLocationLat)! , Double(model.lastLocationLong)!)
+//
+//        marker.coordinate = locCord
+//        marker.position = locCord
+//
+//    }else
+//    {
+//        marker.coordinate = loc
+//        marker.position = loc
+//    }
+//    model.marker = marker
+//    marker.iconView = embeddedView // Adding Xib View to base view.
+//
+//    self.objGMVC.placePinAtCoordinateWithTrackerUserName(marker, mapView: self.objGMVC.customMapView, name: model.name)
+//}
+
