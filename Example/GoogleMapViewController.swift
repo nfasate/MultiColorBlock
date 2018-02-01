@@ -1453,3 +1453,13 @@ extension UIColor
 //    self.objGMVC.placePinAtCoordinateWithTrackerUserName(marker, mapView: self.objGMVC.customMapView, name: model.name)
 //}
 
+//NAVIGATE on Google map with location name
+//if Singleton.sharedInstance.schemeAvailable("comgooglemaps://")
+//{
+//    if marker_Lat != nil && marker_Long != nil
+//    {
+//        UIApplication.shared.openURL(URL(string:
+//            "comgooglemaps://?saddr=\(Macros.Constants.userCurrentLat!),\(Macros.Constants.userCurrentLong!)&daddr=\(marker_Lat!),\(marker_Long!)&directionsmode=driving")!)
+//    }
+//}
+
